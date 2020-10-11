@@ -7,7 +7,10 @@ const Home = () => {
     const navigation = useNavigation();
     
     function handleNavigationToHome(){
-        navigation.navigate('Home');
+        navigation.navigate('FlowDetails');
+    }
+    function handleNavigationToLoan(){
+        navigation.navigate('Loan');
     }
 
     return (
@@ -20,7 +23,7 @@ const Home = () => {
                 <Text  style={styles.textHead}>A receber</Text>
                 <Text  style={styles.textHead}>Recebido</Text>
             </View>    
-            <TouchableOpacity style={styles.itemBody} onPress={()=>{}}>
+            <TouchableOpacity style={styles.itemBody} onPress={handleNavigationToHome}>
                 <View style={styles.body}>
                     <Text style={styles.textBody}>Outubro/2020</Text>
                     <Text  style={styles.textBody}>50</Text>
@@ -28,7 +31,7 @@ const Home = () => {
                     <Text  style={styles.textBody}>R$ 500,00</Text>
                 </View> 
             </TouchableOpacity>
-            <TouchableOpacity style={styles.itemBody} onPress={()=>{}}>
+            <TouchableOpacity style={styles.itemBody} onPress={handleNavigationToHome}>
                 <View style={styles.body}>
                     <Text style={styles.textBody}>Outubro/2020</Text>
                     <Text  style={styles.textBody}>50</Text>
@@ -36,7 +39,7 @@ const Home = () => {
                     <Text  style={styles.textBody}>R$ 500,00</Text>
                 </View> 
             </TouchableOpacity>
-            <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToHome}>
+            <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToLoan}>
                 <Text style={styles.text}>ACESSO AO EMPRÉSTIMO</Text>
             </TouchableOpacity>
             <View style={styles.hr}></View>
