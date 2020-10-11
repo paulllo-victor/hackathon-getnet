@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image,StyleSheet,TextInput, Button, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const Login = () => {
+const Login = () => {      
     const navigation = useNavigation();
     
     function handleNavigationToHome(){
@@ -19,6 +19,7 @@ const Login = () => {
             </TouchableOpacity>
             <Text style={styles.textOr}>ou</Text>
             <Text style={styles.textRegister}>Fazer cadastro</Text>
+            <View style={styles.hr}></View>
         </View>
     )
 }
@@ -43,17 +44,21 @@ const styles = StyleSheet.create({
         elevation: 11,
     },
     btnEnter: {
-        padding: 20,
-        borderRadius: 6,
+        padding: 15,
+        borderRadius: 40,
         marginTop: 120,
         color: '#20232a',
+        backgroundColor: '#EF0505',
         width: 360, 
         borderWidth: 1,
         borderColor: '#EF0505',
+
     },
     text: {
         alignSelf: 'center',
-        color: '#EF0505'
+        color: '#EF0505',
+        color: 'white',
+        fontFamily: 'Rubik_500Medium'
     },
     textOr:{
         marginVertical: 20,
@@ -61,7 +66,15 @@ const styles = StyleSheet.create({
     },
     textRegister: {
         textDecorationLine: "underline",
-        color: 'black'
+        color: 'black',
+        color: '#aaa'
+    },
+    hr: {
+        width: 200,
+        height: 6,
+        marginTop: 40,
+        backgroundColor: 'red',
+        borderRadius: 40
     }
 })
 
