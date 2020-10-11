@@ -6,7 +6,7 @@ const MessageStart = () => {
     const navigation = useNavigation();
     
     function handleNavigationToNext(){
-        navigation.navigate('MessageClientGetNet');
+        navigation.navigate('DataShare');
     }
 
     return (

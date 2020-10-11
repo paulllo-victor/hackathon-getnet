@@ -15,11 +15,10 @@ const MessageStart = () => {
             <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
             <View style={styles.containerCenter}>
                 <Image style={styles.imageIcon} source={require('../../assets/images/historic.png')}/>
-                <Text style={styles.message}>Cliente getnet? 
-                Não cliente getnet?</Text>
+                <Text style={styles.message}>Você sabia que existe a possibilidade de solicitar empréstimo baseado nos valores recebidos nas suas transações?</Text>
             </View>
             <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToMessageClientGetNet}>
-                <Text style={styles.text}>ACESSO AO EMPRÉSTIMO</Text>
+                <Text style={styles.text}>VAMOS CONHECER</Text>
             </TouchableOpacity>
             <View style={styles.hr}></View>
         </View>
