@@ -6,7 +6,7 @@ const MessageStart = () => {
     const navigation = useNavigation();
     
     function handleNavigationToNext(){
-        navigation.navigate('MessageClientGetNet');
+        navigation.navigate('ResponseFail');
     }
     function handleNavigationToBack(){
         navigation.goBack();
@@ -29,7 +29,7 @@ const MessageStart = () => {
                 Tente novamente em um prazo de 120 dias</Text>
             </View>
             <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToNext}>
-                <Text style={styles.text}>OK</Text>
+                <Text style={styles.text}>ENTENDA O PROBLEMA OCORRIDO</Text>
             </TouchableOpacity>
             <View style={styles.hr}></View>
         </View>

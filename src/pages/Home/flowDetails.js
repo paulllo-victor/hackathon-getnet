@@ -1,27 +1,49 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import { StyleSheet, Text, FlatList, View, Image,TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-
+import { useNavigation, useRoute } from '@react-navigation/native';
+import Api from '../../servers/api';
 
 const Home = () => {
     const navigation = useNavigation();
+    const route = useRoute();
+    const sale = route.params.sale;
     
     function handleNavigationToHome(){
         navigation.navigate('Home');
     }
 
+    const [sales,setSales] = useState([]);
+
+    async function listSales(){
+        try {
+            const m =  `${sale._id.year}-${sale._id.month}`;
+        const response = await Api.get(`sales?month=${m}`).then(response => setSales(
+                response.data
+        ));
+        
+        console.log(sales)
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
+    useEffect(()=>{
+        listSales();
+    }, []);
+
     return (
         <View style={styles.container}>
             <Image style={styles.image} source={require('../../assets/images/getcred.png')}/>
-            <Text style={styles.flow}>Detalhamento de Outubro/2020</Text>
+            <Text style={styles.flow}>Detalhamento de  {sale._id.month}/{sale._id.year}</Text>
             <View style={styles.details}>
                 <View style={styles.detailsItem}>
                     <Text style={styles.detailsTextHead}>Vendas</Text>
-                    <Text style={styles.detailsTextBody}>50</Text>
+                    <Text style={styles.detailsTextBody}>{sale.count}</Text>
                 </View>
                 <View style={styles.detailsItemGreen}>
                     <Text style={styles.detailsTextHead}>Recebido</Text>
-                    <Text style={styles.detailsTextBody}>R$ 500,00</Text>
+                    <Text style={styles.detailsTextBody}>R$ {sale.total}</Text>
                 </View>
             </View>
             <View style={styles.detailsMonth}>
@@ -35,50 +57,26 @@ const Home = () => {
                 <Text  style={styles.textHead}>Status</Text>
                 <Text  style={styles.textHead}>Valor</Text>
             </View>    
-            <TouchableOpacity style={styles.itemBody} onPress={()=>{}}>
-                <View style={styles.body}>
-                    <Text style={styles.textBody}>20/10</Text>
-                    <Text  style={styles.textBody}>Crédito</Text>
-                    <Text  style={styles.textBody}>
-                        <Image  source={require('../../assets/images/elo.png')}/>
-                    </Text>
-                    <Text  style={styles.textBody}>Aprovado</Text>
-                    <Text  style={styles.textBody}>R$ 100,00</Text>
-                </View> 
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.itemBody} onPress={()=>{}}>
-                <View style={styles.body}>
-                    <Text style={styles.textBody}>20/10</Text>
-                    <Text  style={styles.textBody}>Crédito</Text>
-                    <Text  style={styles.textBody}>
-                        <Image  source={require('../../assets/images/elo.png')}/>
-                    </Text>
-                    <Text  style={styles.textBody}>Aprovado</Text>
-                    <Text  style={styles.textBody}>R$ 100,00</Text>
-                </View> 
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.itemBody} onPress={()=>{}}>
-                <View style={styles.body}>
-                    <Text style={styles.textBody}>20/10</Text>
-                    <Text  style={styles.textBody}>Crédito</Text>
-                    <Text  style={styles.textBody}>
-                        <Image  source={require('../../assets/images/elo.png')}/>
-                    </Text>
-                    <Text  style={styles.textBody}>Aprovado</Text>
-                    <Text  style={styles.textBody}>R$ 100,00</Text>
-                </View> 
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.itemBody} onPress={()=>{}}>
-                <View style={styles.body}>
-                    <Text style={styles.textBody}>20/10</Text>
-                    <Text  style={styles.textBody}>Crédito</Text>
-                    <Text  style={styles.textBody}>
-                        <Image  source={require('../../assets/images/elo.png')}/>
-                    </Text>
-                    <Text  style={styles.textBody}>Aprovado</Text>
-                    <Text  style={styles.textBody}>R$ 100,00</Text>
-                </View> 
-            </TouchableOpacity>
+            <FlatList
+                  data={sales}
+                  showsVerticalScrollIndicator={false}
+                  onEndReached={listSales}
+                  onEndReachedThreshold={0.2}
+                  keyExtractor={s => String(s._id)}
+                  renderItem={({item:s})=>(   
+                <TouchableOpacity style={styles.itemBody} onPress={()=>{}} key={String(sale._id)}>
+                    <View style={styles.body}>
+                    <Text style={styles.textBody}>{s.month}</Text>
+                    <Text  style={styles.textBody}>{s.payment}</Text>
+                        <Text  style={styles.textBody}>
+                            <Image  source={require('../../assets/images/elo.png')}/>
+                        </Text>
+                    <Text  style={styles.textBody}>{s.status}</Text>
+                    <Text  style={styles.textBody}>R$ {s.value}</Text>
+                    </View> 
+                </TouchableOpacity>  
+            )} 
+            />  
             <View style={styles.hr}></View>
         </View>
     )

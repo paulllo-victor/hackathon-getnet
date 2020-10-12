@@ -1,34 +1,28 @@
-import React from 'react';
-import {View, Image, StyleSheet, Text, TouchableOpacity, TextInput} from 'react-native';
+import React,{useEffect} from 'react';
+import {View, Image, StyleSheet, Text, TouchableOpacity, TextInput, ActivityIndicator} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const MessageStart = () => {
+const Loading = () => {
     const navigation = useNavigation();
-    
-    function handleNavigationToNext(){
-        navigation.navigate('Fail');
+
+    function handleNavigationToAnalyze(){       
+        setTimeout(()=>{navigation.navigate('Home')},
+            2000
+        )
     }
-    function handleNavigationToBack(){
-        navigation.goBack();
-    }
+
+    handleNavigationToAnalyze();
 
     return (
         <View style={styles.container}>
             <View style={styles.barTop}></View>            
-            <TouchableOpacity style={styles.btnBack} onPress={handleNavigationToBack}>
+            {/* <TouchableOpacity style={styles.btnBack} onPress={handleNavigationToBack}>
                 <Image style={styles.imageBack} source={require('../../assets/images/back.png')}/>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             <Image style={styles.image} source={require('../../assets/images/getcred.png')}/>
             <View style={styles.containerCenter}>
-                <Text style={styles.message}> 
-                Sua situação está PENDENTE</Text>
-                <Image style={styles.imageIcon} source={require('../../assets/images/pendency.png')}/>
-                <Text style={styles.messageSubtitle}> 
-                Favor verificar, item com pendência.</Text>
+                <ActivityIndicator style={styles.imageIcon} size="large" color="red" />
             </View>
-            <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToNext}>
-                <Text style={styles.text}>OK</Text>
-            </TouchableOpacity>
             <View style={styles.hr}></View>
         </View>
     )
@@ -41,7 +35,7 @@ const styles = StyleSheet.create({
     containerCenter:{
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 50
+        marginTop: 160
     },
     btnBack: {        
         alignSelf: 'flex-start',
@@ -97,7 +91,7 @@ const styles = StyleSheet.create({
     hr: {
         width: 200,
         height: 6,
-        marginTop: 20,
+        marginTop: 290,
         backgroundColor: 'red',
         borderRadius: 40
     },
@@ -109,4 +103,4 @@ const styles = StyleSheet.create({
     },
 }); 
 
-export default MessageStart;
+export default Loading;

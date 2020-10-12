@@ -6,7 +6,7 @@ const MessageStart = () => {
     const navigation = useNavigation();
     
     function handleNavigationToAccept(){
-        navigation.navigate('Accept');
+        navigation.navigate('Pendency');
     }
     function handleNavigationToBack(){
         navigation.goBack();

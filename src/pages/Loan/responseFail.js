@@ -6,7 +6,7 @@ const MessageStart = () => {
     const navigation = useNavigation();
     
     function handleNavigationToNext(){
-        navigation.navigate('Fail');
+        navigation.navigate('AcceptSmallerValue');
     }
     function handleNavigationToBack(){
         navigation.goBack();
@@ -21,10 +21,10 @@ const MessageStart = () => {
             <Image style={styles.image} source={require('../../assets/images/getcred.png')}/>
             <View style={styles.containerCenter}>
                 <Text style={styles.message}> 
-                Sua situação está PENDENTE</Text>
-                <Image style={styles.imageIcon} source={require('../../assets/images/pendency.png')}/>
+                Entenda o problema ocorrido</Text>
+                <Image style={styles.imageIcon} source={require('../../assets/images/apresentation.png')}/>
                 <Text style={styles.messageSubtitle}> 
-                Favor verificar, item com pendência.</Text>
+                O seu crédito não pode ser concedido, pois verificamos a existência de um empréstimo  sob modalidade de garantia dos valores a receber por meio das máquinas de pagamento ainda ativo em seu nome</Text>
             </View>
             <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToNext}>
                 <Text style={styles.text}>OK</Text>
@@ -70,7 +70,9 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     messageSubtitle: {
-        fontFamily: 'Rubik_400Regular'
+        fontFamily: 'Rubik_400Regular',
+        textAlign: 'center',
+        paddingHorizontal: 10
     },
     inputText: {
         width: 350,
@@ -92,7 +94,7 @@ const styles = StyleSheet.create({
         width: 360, 
         borderWidth: 1,
         borderColor: '#EF0505',
-        marginTop: 220
+        marginTop: 200
     },
     hr: {
         width: 200,

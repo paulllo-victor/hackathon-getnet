@@ -6,7 +6,7 @@ const MessageStart = () => {
     const navigation = useNavigation();
     
     function handleNavigationGetCred(){
-        navigation.navigate('GetCred');
+        navigation.navigate('Accept');
     }
     function handleNavigationCred(){
         navigation.navigate('Loan');
@@ -28,13 +28,14 @@ const MessageStart = () => {
                 <Text style={styles.message}> 
                 seu emprestimo foi APROVADO!!!</Text>
                 <Image style={styles.imageIcon} source={require('../../assets/images/accept.png')}/>
-                <Text style={styles.messageSubtitle}> 
-                Você solicitou um empréstimo no valor de R$ 5.000,00, infelizmente esse valor não está autorizado nesse momento. 
-                </Text>
+                <Text style={styles.messageSubtitle}>  Você solicitou um empréstimo no valor de </Text>
+                <Text style={styles.message}> R$7.000,00</Text>
+                <Text></Text>
+                <Text style={styles.messageSubtitle}>Infelizmente esse valor não está autorizado nesse momento.</Text>
                 <Text></Text>
                 <Text style={styles.messageSubtitle}> 
-                Conseguimos liberar um empréstimo de 2000,00.</Text>
-                <Text style={styles.message}> R$ 2.000,00</Text>
+                Conseguimos liberar um empréstimo</Text>
+                <Text style={styles.message}> R$ 5.000,00</Text>
             </View>
             <View style={styles.duoButton}>
                 <TouchableOpacity style={styles.btnNegar} onPress={handleNavigationCred}>
@@ -109,7 +110,7 @@ const styles = StyleSheet.create({
         width: 160, 
         borderWidth: 1,
         borderColor: '#EF0505',
-        marginTop:100,
+        marginTop: 90,
         marginHorizontal: 6,
     },
     btnNegar:{
@@ -120,7 +121,7 @@ const styles = StyleSheet.create({
         width: 160, 
         borderWidth: 1,
         borderColor: '#ccc',
-        marginTop: 100,
+        marginTop:  90,
         marginHorizontal: 6,
     },
     hr: {

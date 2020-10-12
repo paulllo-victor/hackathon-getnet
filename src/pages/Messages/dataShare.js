@@ -8,6 +8,9 @@ const MessageStart = () => {
     function handleNavigationToNext(){
         navigation.navigate('Home');
     }
+    function handleNavigationToLoading(){
+        navigation.navigate('NoClient');
+    }
 
     return (
         <View style={styles.container}>
@@ -22,7 +25,7 @@ const MessageStart = () => {
                 <TouchableOpacity style={styles.btnNegar} onPress={handleNavigationToNext}>
                     <Text style={styles.text}>NEGAR</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToNext}>
+                <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToLoading}>
                     <Text style={styles.text}>AUTORIZAR</Text>
                 </TouchableOpacity>
             </View>

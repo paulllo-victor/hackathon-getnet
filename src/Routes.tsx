@@ -19,6 +19,8 @@ import GetNet from './pages/getnet';
 import AcceptSmallerValue from './pages/Loan/acceptSmallerValue';
 import Loading from  './pages/loading';
 import LoadingApk from  './pages/loading/apk';
+import NoClient from  './pages/loading/noClient';
+import ResponseFail from  './pages/Loan/responseFail';
 
 const AppStack = createStackNavigator();
 
@@ -45,6 +47,8 @@ const Routes = () => {
                 <AppStack.Screen name="GetCred" component={GetCred}/>
                 <AppStack.Screen name="AcceptSmallerValue" component={AcceptSmallerValue}/>                
                 <AppStack.Screen name="Loading" component={Loading}/>
+                <AppStack.Screen name="NoClient" component={NoClient}/>
+                <AppStack.Screen name="ResponseFail" component={ResponseFail}/>
             </AppStack.Navigator>
         </NavigationContainer>
     );
