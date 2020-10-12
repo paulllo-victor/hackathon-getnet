@@ -8,6 +8,9 @@ const MessageStart = () => {
     function handleNavigationGetCred(){
         navigation.navigate('GetCred');
     }
+    function handleNavigationCred(){
+        navigation.navigate('Loan');
+    }
     function handleNavigationToBack(){
         navigation.goBack();
     }
@@ -26,16 +29,21 @@ const MessageStart = () => {
                 seu emprestimo foi APROVADO!!!</Text>
                 <Image style={styles.imageIcon} source={require('../../assets/images/accept.png')}/>
                 <Text style={styles.messageSubtitle}> 
-                    Você pediu um emprestimo de R$ 5.000,00, infezlimente esse valor não está disponivel nesse momento.
+                Você solicitou um empréstimo no valor de R$ 5.000,00, infelizmente esse valor não está autorizado nesse momento. 
                 </Text>
                 <Text></Text>
                 <Text style={styles.messageSubtitle}> 
-                Mas você conseguiu um emprestismo de </Text>
+                Conseguimos liberar um empréstimo de 2000,00.</Text>
                 <Text style={styles.message}> R$ 2.000,00</Text>
             </View>
-            <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationGetCred}>
-                <Text style={styles.text}>CONTINUAR</Text>
-            </TouchableOpacity>
+            <View style={styles.duoButton}>
+                <TouchableOpacity style={styles.btnNegar} onPress={handleNavigationCred}>
+                    <Text style={styles.text}>NEGAR</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationGetCred}>
+                    <Text style={styles.text}>AUTORIZAR</Text>
+                </TouchableOpacity>
+            </View>
             <View style={styles.hr}></View>
         </View>
     )
@@ -94,14 +102,26 @@ const styles = StyleSheet.create({
         elevation: 11,
     },
     btnEnter: {
-        padding: 15,
-        borderRadius: 40,
+        padding: 20,
+        borderRadius: 25,
         color: '#20232a',
         backgroundColor: '#EF0505',
-        width: 360, 
+        width: 160, 
         borderWidth: 1,
         borderColor: '#EF0505',
-        marginTop: 150
+        marginTop:100,
+        marginHorizontal: 6,
+    },
+    btnNegar:{
+        padding: 20,
+        borderRadius: 25,
+        color: '#ccc',
+        backgroundColor: '#ccc',
+        width: 160, 
+        borderWidth: 1,
+        borderColor: '#ccc',
+        marginTop: 100,
+        marginHorizontal: 6,
     },
     hr: {
         width: 200,
@@ -116,6 +136,9 @@ const styles = StyleSheet.create({
         color: 'white',
         fontFamily: 'Rubik_500Medium'
     },
+    duoButton:{
+        flexDirection: 'row'
+    }
 }); 
 
 export default MessageStart;

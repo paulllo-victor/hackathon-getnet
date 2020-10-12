@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import { StyleSheet, Text, FlatList, View, Image,TouchableOpacity,Picker } from 'react-native';
+import { StyleSheet, Text, FlatList, View, Image,TouchableOpacity, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import Api from '../../servers/api';
@@ -16,9 +16,9 @@ const Home = () => {
 
     const [sales,setSales] = useState([]);
 
-    function listSales(){
-        const list = Api.get('sales').then(Response=>setSales(Response.data))
-        console.log(list)
+    async function listSales(){
+        const list = await Api.get('sales');
+        setSales(list.data);
     }
 
     useEffect(()=>{
@@ -34,29 +34,39 @@ const Home = () => {
                 <Text  style={styles.textHead}>Vendas</Text>
                 <Text  style={styles.textHead}>Recebido</Text>
             </View> 
-            <FlatList 
-                data={sales}
-                renderItem={({item:sale})=>{                    
-                    <TouchableOpacity style={styles.itemBody} onPress={handleNavigationToHome}>
-                        <View style={styles.body}>
-                            <Text style={styles.textBody}>{sale.date}</Text>
-                            <Text  style={styles.textBody}>50</Text>
-                            <Text  style={styles.textBody}>{sale.value}</Text>
-                        </View> 
-                    </TouchableOpacity>
-                }} 
-            />
-            <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToLoan}>
-                <Text style={styles.text}>ACESSO AO EMPRÉSTIMO</Text>
-            </TouchableOpacity>
-            <View style={styles.hr}></View>
+            <ScrollView style={styles.listSales} 
+                showsVerticalScrollIndicator={false}
+                onEndReached={listSales}
+                onEndReachedThreshold={0.2}>
+                <View>
+                <FlatList 
+                    data={sales}
+                    renderItem={({item:sale})=> (                    
+                        <TouchableOpacity style={styles.itemBody} onPress={handleNavigationToHome}>
+                            <View style={styles.body}>
+                                <Text style={styles.textBody}>{sale.date}</Text>
+                                <Text  style={styles.textBody}>50</Text>
+                                <Text  style={styles.textBody}>{sale.value}</Text>
+                            </View> 
+                        </TouchableOpacity>
+                    )} 
+                />
+                </View>
+            </ScrollView>
+            <View style={styles.containerFixed}>
+                <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToLoan}>
+                    <Text style={styles.text}>ACESSO AO EMPRÉSTIMO</Text>
+                </TouchableOpacity>
+                <View style={styles.hr}></View>
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        alignItems:'center'
+        alignItems:'center',
+        position: 'relative'
     },
     image: {
         marginTop: 80,
@@ -80,8 +90,18 @@ const styles = StyleSheet.create({
         width: 360, 
         borderWidth: 1,
         borderColor: '#EF0505',
-        marginTop: 270
+        // marginTop: 270,
+        
     },
+    containerFixed:{
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        alignItems: 'center',
+        backgroundColor: 'white',
+        width: '100%',
+        paddingVertical: 40,
+    },  
     hr: {
         width: 200,
         height: 6,
@@ -89,6 +109,9 @@ const styles = StyleSheet.create({
         backgroundColor: 'red',
         borderRadius: 40
     },
+    listSales:{
+        height: '70%'
+    },  
     head:{
         flexDirection: 'row',
         marginTop: 10,

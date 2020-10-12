@@ -20,9 +20,9 @@ const MessageStart = () => {
     return (
         <View style={styles.container}>
             <View style={styles.barTop}></View>            
-            <TouchableOpacity style={styles.btnBack} onPress={handleNavigationToBack}>
+            {/* <TouchableOpacity style={styles.btnBack} onPress={handleNavigationToBack}>
                 <Image style={styles.imageBack} source={require('../../assets/images/back.png')}/>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
             <View style={styles.detailsCred}>
                 <Text style={styles.detailsTextCred}>Empréstimo</Text>

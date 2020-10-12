@@ -15,7 +15,7 @@ const MessageStart = () => {
             <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
             <View style={styles.containerCenter}>
                 <Image style={styles.imageIcon} source={require('../../assets/images/loan.png')}/>
-                <Text style={styles.message}>Você sabia que existe a possibilidade de solicitar empréstimo baseado nos valores recebidos nas suas transações?</Text>
+                <Text style={styles.message}>Você sabia que você pode solicitar empréstimo através desse aplicativo oferecendo como garantia seus recebíveis? Clique abaixo para verificar!</Text>
             </View>
             <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToMessageClientGetNet}>
                 <Text style={styles.text}>VAMOS CONHECER</Text>
@@ -47,7 +47,8 @@ const styles = StyleSheet.create({
     },
     message:{
         fontFamily: 'Rubik_700Bold',
-        textAlign: 'center'
+        textAlign: 'center',
+        paddingHorizontal: 10
     },
     btnEnter: {
         padding: 15,
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
         width: 360, 
         borderWidth: 1,
         borderColor: '#EF0505',
-        marginTop: 260
+        marginTop: 230
     },
     hr: {
         width: 200,

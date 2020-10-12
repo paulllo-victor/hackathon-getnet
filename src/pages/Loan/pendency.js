@@ -24,7 +24,7 @@ const MessageStart = () => {
                 Sua situação está PENDENTE</Text>
                 <Image style={styles.imageIcon} source={require('../../assets/images/pendency.png')}/>
                 <Text style={styles.messageSubtitle}> 
-                Favor verificar  ítem com pendências</Text>
+                Favor verificar, item com pendência.</Text>
             </View>
             <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToNext}>
                 <Text style={styles.text}>OK</Text>

@@ -1,41 +1,36 @@
-import React, {useState} from 'react';
-import {View, Image, StyleSheet, Text, TouchableOpacity, TextInput, CheckBox} from 'react-native';
+import React,{useEffect} from 'react';
+import {View, Image, StyleSheet, Text, TouchableOpacity, TextInput, ActivityIndicator} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const MessageStart = () => {
-    const [isSelected, setSelection] = useState(false);
-
+const Loading = () => {
     const navigation = useNavigation();
-    
-    function handleNavigationToAnalyze(){
-        navigation.navigate('Loading');
+    // function handleNavigationGetCred(){
+    //     navigation.navigate('GetCred');
+    // }
+    // function handleNavigationToBack(){
+    //     navigation.goBack();
+    // }
+    function handleNavigationToAnalyze(){   
+        
+        setTimeout(()=>{navigation.navigate('Analyze')},
+            2000
+        )
     }
-    function handleNavigationToBack(){
-        navigation.goBack();
-    }
+
+    handleNavigationToAnalyze();
 
     return (
         <View style={styles.container}>
             <View style={styles.barTop}></View>            
-            <TouchableOpacity style={styles.btnBack} onPress={handleNavigationToBack}>
+            {/* <TouchableOpacity style={styles.btnBack} onPress={handleNavigationToBack}>
                 <Image style={styles.imageBack} source={require('../../assets/images/back.png')}/>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
             <View style={styles.containerCenter}>
-                <Text style={styles.message}> 
-                Informe as datas do seu histórico de pagamento</Text>
+                <ActivityIndicator style={styles.imageIcon} size="large" color="red" />
+                <Text style={styles.messageSubtitle}> 
+                Carregando...</Text>
             </View>
-            <TextInput style={styles.inputText} placeholder="DATA DE INÍCIO"/>
-            <TextInput style={styles.inputText} placeholder="DATA DE FINAL"/>
-            <TextInput style={styles.inputText} placeholder="VALOR DO EMPRÉSTIMO"/>
-            <View style={styles.containerCheckbox}>
-                <CheckBox style={styles.checkbox} value={isSelected} onValueChange={setSelection}/>
-                <Text style={styles.textTerms}>Eu li e concordo com os termos de uso da getCred
- </Text>
-            </View>
-            <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToAnalyze}>
-                <Text style={styles.text}>CONTINUAR</Text>
-            </TouchableOpacity>
             <View style={styles.hr}></View>
         </View>
     )
@@ -48,14 +43,17 @@ const styles = StyleSheet.create({
     containerCenter:{
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 50
+        marginTop: 140
     },
     btnBack: {        
         alignSelf: 'flex-start',
     },
+    imageIcon: {
+        marginTop: 400
+    },  
     imageBack: {
         marginTop: 8,
-        marginHorizontal: 8
+        marginHorizontal: 8 
     },  
     barTop:{
         width: 1000,
@@ -66,20 +64,15 @@ const styles = StyleSheet.create({
         marginTop: 50,
     },
     imageIcon:{
-        marginBottom: 20,    
+        marginTop: 60,    
+        marginBottom: 50,    
     },
     message:{
         fontFamily: 'Rubik_700Bold',
-        textAlign: 'center',
-        paddingHorizontal: 10
+        textAlign: 'center'
     },
-    containerCheckbox: {
-        marginTop: 20,
-        flexDirection: 'row',
-        paddingHorizontal: 35
-    },  
-    textTerms :{
-        color: '#aaa'
+    messageSubtitle: {
+        fontFamily: 'Rubik_400Regular'
     },
     inputText: {
         width: 350,
@@ -87,7 +80,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         color: '#20232a',
         padding: 15,
-        marginTop: 20,
+        marginTop: 40,
         shadowColor: "#000",
         shadowOpacity: 0.36,
         shadowRadius: 6.68,
@@ -101,12 +94,12 @@ const styles = StyleSheet.create({
         width: 360, 
         borderWidth: 1,
         borderColor: '#EF0505',
-        marginTop: 140
+        marginTop: 220
     },
     hr: {
         width: 200,
         height: 6,
-        marginTop: 20,
+        marginTop: 290,
         backgroundColor: 'red',
         borderRadius: 40
     },
@@ -118,4 +111,4 @@ const styles = StyleSheet.create({
     },
 }); 
 
-export default MessageStart;
+export default Loading;

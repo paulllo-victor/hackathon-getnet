@@ -8,16 +8,10 @@ const MessageStart = () => {
     function handleNavigationGetCred(){
         navigation.navigate('GetCred');
     }
-    function handleNavigationToBack(){
-        navigation.goBack();
-    }
 
     return (
         <View style={styles.container}>
-            <View style={styles.barTop}></View>            
-            <TouchableOpacity style={styles.btnBack} onPress={handleNavigationToBack}>
-                <Image style={styles.imageBack} source={require('../../assets/images/back.png')}/>
-            </TouchableOpacity>
+            <View style={styles.barTop}></View>       
             <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
             <View style={styles.containerCenter}>
                 <Text style={styles.message}> 

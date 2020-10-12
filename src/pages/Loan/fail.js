@@ -23,7 +23,7 @@ const MessageStart = () => {
                 <Text style={styles.message}> 
                 Infelizmente,</Text>
                 <Text style={styles.message}> 
-                não é possível concerder esse empréstimo</Text>
+                não foi possível conceder esse empréstimo.</Text>
                 <Image style={styles.imageIcon} source={require('../../assets/images/fail.png')}/>
                 <Text style={styles.messageSubtitle}> 
                 Tente novamente em um prazo de 120 dias</Text>

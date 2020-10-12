@@ -15,16 +15,16 @@ const MessageStart = () => {
             <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
             <View style={styles.containerCenter}>
                 <Image style={styles.imageIcon} source={require('../../assets/images/historic.png')}/>
-                <Text style={styles.message}>Eu aceito compartilhar minhas transações financeiras com a getnet  e com Santander?
+                <Text style={styles.message}>Aceita compartilhar suas transações financeiras com a Getnet e Santander?
                 </Text>
             </View>
             <View style={styles.duoButton}>
-            <TouchableOpacity style={styles.btnNegar} onPress={handleNavigationToNext}>
-                <Text style={styles.text}>NEGAR</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToNext}>
-                <Text style={styles.text}>AUTORIZAR</Text>
-            </TouchableOpacity>
+                <TouchableOpacity style={styles.btnNegar} onPress={handleNavigationToNext}>
+                    <Text style={styles.text}>NEGAR</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToNext}>
+                    <Text style={styles.text}>AUTORIZAR</Text>
+                </TouchableOpacity>
             </View>
             <View style={styles.hr}></View>
         </View>
