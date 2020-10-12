@@ -7,6 +7,7 @@
 - [Sobre](#-Sobre)
 - [Tecnologias Utilizadas](#-tecnologias-Utilizadas)
 - [Como baixar o projeto](#-como-baixar-o-projeto)
+- [Algumas telas](#-algumas-telas)
 
 ## 🗒 Sobre
 
@@ -44,3 +45,4 @@ Nossa solução se integra a já existente da Getnet facilitando a aceitação p
   $ npm start
 
 ```
+## 🗒 Algumas telas
