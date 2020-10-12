@@ -37,6 +37,6 @@ O **GetCred API**, é uma solução integrada ao aplicativo SuperGet da Getnet q
   $ yarn ou npm install 
 
   # Inciar o projeto
-  $ npm dev
+  $ npm start
 
 ```
