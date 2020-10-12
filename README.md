@@ -1,6 +1,7 @@
 <h1 align="center">
   <img scr="./assets/favicon.png">
 </h1>
+<img scr="./assets/favicon.png">
 
 # Indice
 - [Sobre](#-Sobre)
