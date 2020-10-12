@@ -12,7 +12,7 @@ const MessageStart = () => {
     return (
         <View style={styles.container}>
             <View style={styles.barTop}></View>
-            <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
+            <Image style={styles.image} source={require('../../assets/images/getcred.png')}/>
             <View style={styles.containerCenter}>
                 <Image style={styles.imageIcon} source={require('../../assets/images/historic.png')}/>
                 <Text style={styles.message}>Aceita compartilhar suas transações financeiras com a Getnet e Santander?

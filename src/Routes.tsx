@@ -18,6 +18,7 @@ import GetCred from './pages/Loan/getCred';
 import GetNet from './pages/getnet';
 import AcceptSmallerValue from './pages/Loan/acceptSmallerValue';
 import Loading from  './pages/loading';
+import LoadingApk from  './pages/loading/apk';
 
 const AppStack = createStackNavigator();
 
@@ -28,6 +29,7 @@ const Routes = () => {
                 backgroundColor: 'white'
             }}}>
                 <AppStack.Screen name="GetNet" component={GetNet}/>
+                <AppStack.Screen name="LoadingApk" component={LoadingApk}/>
                 <AppStack.Screen name="Login" component={Login}/>
                 <AppStack.Screen name="Home" component={Home}/>
                 <AppStack.Screen name="MessageStart" component={MessageStart}/>

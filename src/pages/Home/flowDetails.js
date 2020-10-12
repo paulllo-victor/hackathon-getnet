@@ -12,7 +12,7 @@ const Home = () => {
 
     return (
         <View style={styles.container}>
-            <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
+            <Image style={styles.image} source={require('../../assets/images/getcred.png')}/>
             <Text style={styles.flow}>Detalhamento de Outubro/2020</Text>
             <View style={styles.details}>
                 <View style={styles.detailsItem}>

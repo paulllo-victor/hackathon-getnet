@@ -21,7 +21,7 @@ const MessageStart = () => {
             <TouchableOpacity style={styles.btnBack} onPress={handleNavigationToBack}>
                 <Image style={styles.imageBack} source={require('../../assets/images/back.png')}/>
             </TouchableOpacity>
-            <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
+            <Image style={styles.image} source={require('../../assets/images/getcred.png')}/>
             <View style={styles.containerCenter}>
                 <Text style={styles.message}> 
                 Parabéns,</Text>

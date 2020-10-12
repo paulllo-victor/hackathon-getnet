@@ -15,7 +15,7 @@ const GetNet = () => {
     const navigation = useNavigation();
     
     function handleNavigationToStart(){
-        navigation.navigate('MessageStart');
+        navigation.navigate('LoadingApk');
     }
 
     return (

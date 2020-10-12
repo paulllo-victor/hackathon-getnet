@@ -12,7 +12,7 @@ const MessageStart = () => {
     return (
         <View style={styles.container}>
             <View style={styles.barTop}></View>       
-            <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
+            <Image style={styles.image} source={require('../../assets/images/getcred.png')}/>
             <View style={styles.containerCenter}>
                 <Text style={styles.message}> 
                 Parabéns,</Text>
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
         width: 360, 
         borderWidth: 1,
         borderColor: '#EF0505',
-        marginTop: 220
+        marginTop: 230
     },
     hr: {
         width: 200,

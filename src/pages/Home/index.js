@@ -27,7 +27,7 @@ const Home = () => {
 
     return (
         <View style={styles.container}>
-            <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
+            <Image style={styles.image} source={require('../../assets/images/getcred.png')}/>
             <Text style={styles.flow}>Fluxo de venda</Text>
             <View style={styles.head}>
                 <Text style={styles.textHead}>Mês</Text>

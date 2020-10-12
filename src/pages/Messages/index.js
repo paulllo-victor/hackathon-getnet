@@ -12,7 +12,7 @@ const MessageStart = () => {
     return (
         <View style={styles.container}>
             <View style={styles.barTop}></View>
-            <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
+            <Image style={styles.image} source={require('../../assets/images/getcred.png')}/>
             <View style={styles.containerCenter}>
                 <Image style={styles.imageIcon} source={require('../../assets/images/loan.png')}/>
                 <Text style={styles.message}>Você sabia que você pode solicitar empréstimo através desse aplicativo oferecendo como garantia seus recebíveis? Clique abaixo para verificar!</Text>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
         width: 360, 
         borderWidth: 1,
         borderColor: '#EF0505',
-        marginTop: 230
+        marginTop: 220
     },
     hr: {
         width: 200,

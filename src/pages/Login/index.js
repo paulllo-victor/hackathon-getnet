@@ -11,7 +11,7 @@ const Login = () => {
 
     return (
         <View style={styles.container}>
-            <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
+            <Image style={styles.image} source={require('../../assets/images/getcred.png')}/>
             <TextInput style={styles.inputText} placeholder="CPF"/>
             <TextInput style={styles.inputText} placeholder="SENHA"/>
             <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToHome}>

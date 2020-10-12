@@ -4,15 +4,9 @@ import { useNavigation } from '@react-navigation/native';
 
 const Loading = () => {
     const navigation = useNavigation();
-    // function handleNavigationGetCred(){
-    //     navigation.navigate('GetCred');
-    // }
-    // function handleNavigationToBack(){
-    //     navigation.goBack();
-    // }
-    function handleNavigationToAnalyze(){   
-        
-        setTimeout(()=>{navigation.navigate('Analyze')},
+
+    function handleNavigationToAnalyze(){       
+        setTimeout(()=>{navigation.navigate('MessageStart')},
             2000
         )
     }
@@ -28,8 +22,6 @@ const Loading = () => {
             <Image style={styles.image} source={require('../../assets/images/getcred.png')}/>
             <View style={styles.containerCenter}>
                 <ActivityIndicator style={styles.imageIcon} size="large" color="red" />
-                <Text style={styles.messageSubtitle}> 
-                Carregando...</Text>
             </View>
             <View style={styles.hr}></View>
         </View>
@@ -43,7 +35,7 @@ const styles = StyleSheet.create({
     containerCenter:{
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 140
+        marginTop: 160
     },
     btnBack: {        
         alignSelf: 'flex-start',

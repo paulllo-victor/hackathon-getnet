@@ -15,13 +15,11 @@ const MessageStart = () => {
     return (
         <View style={styles.container}>
             <View style={styles.barTop}></View>
-            <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
+            <Image style={styles.image} source={require('../../assets/images/getcred.png')}/>
             <View style={styles.containerCenter}>
                 <Image style={styles.imageIcon} source={require('../../assets/images/client.png')}/>
-                <Text style={styles.message}>Cliente getnet? 
+                <Text style={styles.message}>Você é um cliente getnet?
                 </Text>
-                <Text style={styles.message}> 
-                Não cliente getnet?</Text>
             </View>
             <View style={styles.duoButton}>
                 <TouchableOpacity style={styles.btnNegar} onPress={handleNavigationToNext}>
@@ -43,7 +41,7 @@ const styles = StyleSheet.create({
     containerCenter:{
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 150
+        marginTop: 190
     },  
     barTop:{
         width: 1000,
@@ -51,7 +49,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#EF0505',
     },  
     image: {
-        marginTop: 50,
+        marginTop: 30,
     },
     imageIcon:{
         marginBottom: 20,    

@@ -23,7 +23,7 @@ const MessageStart = () => {
             {/* <TouchableOpacity style={styles.btnBack} onPress={handleNavigationToBack}>
                 <Image style={styles.imageBack} source={require('../../assets/images/back.png')}/>
             </TouchableOpacity> */}
-            <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
+            <Image style={styles.image} source={require('../../assets/images/getcred.png')}/>
             <View style={styles.detailsCred}>
                 <Text style={styles.detailsTextCred}>Empréstimo</Text>
                 <Text style={styles.detailsTextCred}>R$ 5.000,00</Text>
