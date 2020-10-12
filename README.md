@@ -8,6 +8,7 @@
 - [Tecnologias Utilizadas](#-tecnologias-Utilizadas)
 - [Como baixar o projeto](#-como-baixar-o-projeto)
 - [Algumas telas](#-algumas-telas)
+- [Time](#--time)
 
 ## 🗒 Sobre
 
@@ -45,4 +46,27 @@ Nossa solução se integra a já existente da Getnet facilitando a aceitação p
   $ npm start
 
 ```
-## 🗒 Algumas telas
+---
+
+## 📱 Algumas telas
+
+<img src="/screenshot/accept.jpeg" width="16%"></img> 
+<img src="/screenshot/analyze.jpeg" width="16%"></img>
+<img src="/screenshot/apresentation.jpeg" width="16%"></img>
+<img src="/screenshot/authorization.jpeg" width="16%"></img>
+<img src="/screenshot/flowDetails.jpeg" width="16%"></img>
+<img src="/screenshot/gatCred.jpeg" width="16%"></img>
+
+---
+
+## 👨‍💻 👩‍💻 Time
+
+```bash
+
+- [Sandra Arruda](https://app.shawee.io/@sandraarruda)
+- [Renata Santos](https://app.shawee.io/@renatasantsil123)
+- [Antonio Carlos](https://app.shawee.io/@antoniocarlos20)
+- [Paulo Victor](https://app.shawee.io/@paulllovms)
+- [Rodrigo de Araújo](https://app.shawee.io/@rodrigoatemoteo)
+
+```
