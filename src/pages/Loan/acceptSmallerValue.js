@@ -1,14 +1,12 @@
-import React, {useState} from 'react';
-import {View, Image, StyleSheet, Text, TouchableOpacity, TextInput, CheckBox} from 'react-native';
+import React from 'react';
+import {View, Image, StyleSheet, Text, TouchableOpacity, TextInput} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const MessageStart = () => {
-    const [isSelected, setSelection] = useState(false);
-
     const navigation = useNavigation();
     
-    function handleNavigationToAnalyze(){
-        navigation.navigate('Analyze');
+    function handleNavigationGetCred(){
+        navigation.navigate('GetCred');
     }
     function handleNavigationToBack(){
         navigation.goBack();
@@ -23,17 +21,19 @@ const MessageStart = () => {
             <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
             <View style={styles.containerCenter}>
                 <Text style={styles.message}> 
-                Informe as datas do seu histórico de pagamento</Text>
+                Parabéns,</Text>
+                <Text style={styles.message}> 
+                seu emprestimo foi APROVADO!!!</Text>
+                <Image style={styles.imageIcon} source={require('../../assets/images/accept.png')}/>
+                <Text style={styles.messageSubtitle}> 
+                    Você pediu um emprestimo de R$ 5.000,00, infezlimente esse valor não está disponivel nesse momento.
+                </Text>
+                <Text></Text>
+                <Text style={styles.messageSubtitle}> 
+                Mas você conseguiu um emprestismo de </Text>
+                <Text style={styles.message}> R$ 2.000,00</Text>
             </View>
-            <TextInput style={styles.inputText} placeholder="DATA DE INÍCIO"/>
-            <TextInput style={styles.inputText} placeholder="DATA DE FINAL"/>
-            <TextInput style={styles.inputText} placeholder="VALOR DO EMPRÉSTIMO"/>
-            <View style={styles.containerCheckbox}>
-                <CheckBox style={styles.checkbox} value={isSelected} onValueChange={setSelection}/>
-                <Text style={styles.textTerms}>Eu li e concordo com os termos de uso da getMoney
- </Text>
-            </View>
-            <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToAnalyze}>
+            <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationGetCred}>
                 <Text style={styles.text}>CONTINUAR</Text>
             </TouchableOpacity>
             <View style={styles.hr}></View>
@@ -53,9 +53,12 @@ const styles = StyleSheet.create({
     btnBack: {        
         alignSelf: 'flex-start',
     },
+    imageIcon: {
+        marginTop: 400
+    },  
     imageBack: {
         marginTop: 8,
-        marginHorizontal: 8
+        marginHorizontal: 8 
     },  
     barTop:{
         width: 1000,
@@ -66,20 +69,17 @@ const styles = StyleSheet.create({
         marginTop: 50,
     },
     imageIcon:{
-        marginBottom: 20,    
+        marginTop: 60,    
+        marginBottom: 50,    
     },
     message:{
         fontFamily: 'Rubik_700Bold',
-        textAlign: 'center',
-        paddingHorizontal: 10
+        textAlign: 'center'
     },
-    containerCheckbox: {
-        marginTop: 20,
-        flexDirection: 'row',
-        paddingHorizontal: 35
-    },  
-    textTerms :{
-        color: '#aaa'
+    messageSubtitle: {
+        fontFamily: 'Rubik_400Regular',
+        textAlign: 'center',
+        paddingHorizontal: 20
     },
     inputText: {
         width: 350,
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         color: '#20232a',
         padding: 15,
-        marginTop: 20,
+        marginTop: 40,
         shadowColor: "#000",
         shadowOpacity: 0.36,
         shadowRadius: 6.68,
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
         width: 360, 
         borderWidth: 1,
         borderColor: '#EF0505',
-        marginTop: 140
+        marginTop: 150
     },
     hr: {
         width: 200,

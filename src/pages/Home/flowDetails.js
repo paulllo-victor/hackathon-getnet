@@ -19,10 +19,6 @@ const Home = () => {
                     <Text style={styles.detailsTextHead}>Vendas</Text>
                     <Text style={styles.detailsTextBody}>50</Text>
                 </View>
-                <View style={styles.detailsItemBlue}>
-                    <Text style={styles.detailsTextHead}>A receber</Text>
-                    <Text style={styles.detailsTextBody}>R$ 500,00</Text>
-                </View>
                 <View style={styles.detailsItemGreen}>
                     <Text style={styles.detailsTextHead}>Recebido</Text>
                     <Text style={styles.detailsTextBody}>R$ 500,00</Text>

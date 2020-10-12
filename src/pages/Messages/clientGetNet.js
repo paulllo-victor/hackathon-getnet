@@ -17,7 +17,7 @@ const MessageStart = () => {
             <View style={styles.barTop}></View>
             <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
             <View style={styles.containerCenter}>
-                <Image style={styles.imageIcon} source={require('../../assets/images/historic.png')}/>
+                <Image style={styles.imageIcon} source={require('../../assets/images/client.png')}/>
                 <Text style={styles.message}>Cliente getnet? 
                 </Text>
                 <Text style={styles.message}> 

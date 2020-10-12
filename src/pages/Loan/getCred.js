@@ -43,10 +43,10 @@ const MessageStart = () => {
             </View> */}
             <View style={styles.duoButton}>
                 <TouchableOpacity style={styles.btnNegar} onPress={handleNavigationToHome}>
-                    <Text style={styles.text}>NEGAR</Text>
+                    <Text style={styles.text}>VOLTAR</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToCongratulations}>
-                    <Text style={styles.text}>AUTORIZAR</Text>
+                    <Text style={styles.text}>CONTINUAR</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.hr}></View>

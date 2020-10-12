@@ -14,7 +14,7 @@ const MessageStart = () => {
             <View style={styles.barTop}></View>
             <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
             <View style={styles.containerCenter}>
-                <Image style={styles.imageIcon} source={require('../../assets/images/historic.png')}/>
+                <Image style={styles.imageIcon} source={require('../../assets/images/loan.png')}/>
                 <Text style={styles.message}>Você sabia que existe a possibilidade de solicitar empréstimo baseado nos valores recebidos nas suas transações?</Text>
             </View>
             <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToMessageClientGetNet}>
