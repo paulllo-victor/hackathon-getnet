@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img scr="https://github.com/paulovictorBraw/hackathon-getnet/blob/frontend/src/assets/images/getcred.png?raw=true">
+  <img scr="./assets/favicon.png">
 </h1>
 
 # Indice
