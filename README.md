@@ -1,7 +1,7 @@
-<h1 align="center">
-  <img scr="./assets/favicon.png">
+<h1 align="center">  
+  <img src="/src/assets/images/getcred.png">
 </h1>
-<img scr="./assets/favicon.png">
+
 
 # Indice
 - [Sobre](#-Sobre)
