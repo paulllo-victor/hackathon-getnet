@@ -1,7 +1,8 @@
-import React from 'react';
-import { StyleSheet, Text, FlatList, View, Image,TouchableOpacity } from 'react-native';
+import React,{useEffect,useState} from 'react';
+import { StyleSheet, Text, FlatList, View, Image,TouchableOpacity,Picker } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+import Api from '../../servers/api';
 
 const Home = () => {
     const navigation = useNavigation();
@@ -13,6 +14,17 @@ const Home = () => {
         navigation.navigate('Loan');
     }
 
+    const [sales,setSales] = useState([]);
+
+    function listSales(){
+        const list = Api.get('sales').then(Response=>setSales(Response.data))
+        console.log(list)
+    }
+
+    useEffect(()=>{
+        listSales();
+    }, []) 
+
     return (
         <View style={styles.container}>
             <Image style={styles.image} source={require('../../assets/images/getnet.png')}/>
@@ -20,25 +32,20 @@ const Home = () => {
             <View style={styles.head}>
                 <Text style={styles.textHead}>Mês</Text>
                 <Text  style={styles.textHead}>Vendas</Text>
-                <Text  style={styles.textHead}>A receber</Text>
                 <Text  style={styles.textHead}>Recebido</Text>
-            </View>    
-            <TouchableOpacity style={styles.itemBody} onPress={handleNavigationToHome}>
-                <View style={styles.body}>
-                    <Text style={styles.textBody}>Outubro/2020</Text>
-                    <Text  style={styles.textBody}>50</Text>
-                    <Text  style={styles.textBody}>R$ 500,00</Text>
-                    <Text  style={styles.textBody}>R$ 500,00</Text>
-                </View> 
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.itemBody} onPress={handleNavigationToHome}>
-                <View style={styles.body}>
-                    <Text style={styles.textBody}>Outubro/2020</Text>
-                    <Text  style={styles.textBody}>50</Text>
-                    <Text  style={styles.textBody}>R$ 500,00</Text>
-                    <Text  style={styles.textBody}>R$ 500,00</Text>
-                </View> 
-            </TouchableOpacity>
+            </View> 
+            <FlatList 
+                data={sales}
+                renderItem={({item:sale})=>{                    
+                    <TouchableOpacity style={styles.itemBody} onPress={handleNavigationToHome}>
+                        <View style={styles.body}>
+                            <Text style={styles.textBody}>{sale.date}</Text>
+                            <Text  style={styles.textBody}>50</Text>
+                            <Text  style={styles.textBody}>{sale.value}</Text>
+                        </View> 
+                    </TouchableOpacity>
+                }} 
+            />
             <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToLoan}>
                 <Text style={styles.text}>ACESSO AO EMPRÉSTIMO</Text>
             </TouchableOpacity>
@@ -89,6 +96,7 @@ const styles = StyleSheet.create({
     },
     textHead: {
         margin: 18,
+        marginHorizontal: 35,
         fontFamily: 'Rubik_700Bold',
     },
     list: {
@@ -102,7 +110,7 @@ const styles = StyleSheet.create({
     textBody: {
         fontFamily: 'Rubik_300Light',
         fontSize: 12,
-        marginHorizontal: 16
+        marginHorizontal: 40,
     },
     itemBody: {
         marginBottom: 15,

@@ -8,6 +8,9 @@ const MessageStart = () => {
     function handleNavigationToNext(){
         navigation.navigate('DataShare');
     }
+    function handleNavigationToHome(){
+        navigation.navigate('Home');
+    }
 
     return (
         <View style={styles.container}>
@@ -20,9 +23,14 @@ const MessageStart = () => {
                 <Text style={styles.message}> 
                 Não cliente getnet?</Text>
             </View>
-            <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToNext}>
-                <Text style={styles.text}>ACESSO AO EMPRÉSTIMO</Text>
-            </TouchableOpacity>
+            <View style={styles.duoButton}>
+                <TouchableOpacity style={styles.btnNegar} onPress={handleNavigationToNext}>
+                    <Text style={styles.text}>NÃO</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btnEnter} onPress={handleNavigationToHome}>
+                    <Text style={styles.text}>SIM</Text>
+                </TouchableOpacity>
+            </View>
             <View style={styles.hr}></View>
         </View>
     )
@@ -53,14 +61,26 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     btnEnter: {
-        padding: 15,
-        borderRadius: 40,
+        padding: 20,
+        borderRadius: 25,
         color: '#20232a',
         backgroundColor: '#EF0505',
-        width: 360, 
+        width: 160, 
         borderWidth: 1,
         borderColor: '#EF0505',
-        marginTop: 260
+        marginTop: 260,
+        marginHorizontal: 6,
+    },
+    btnNegar:{
+        padding: 20,
+        borderRadius: 25,
+        color: '#ccc',
+        backgroundColor: '#ccc',
+        width: 160, 
+        borderWidth: 1,
+        borderColor: '#ccc',
+        marginTop: 260,
+        marginHorizontal: 6,
     },
     hr: {
         width: 200,
@@ -75,6 +95,10 @@ const styles = StyleSheet.create({
         color: 'white',
         fontFamily: 'Rubik_500Medium'
     },
+    
+    duoButton:{
+        flexDirection: 'row'
+    }
 }); 
 
 export default MessageStart;
